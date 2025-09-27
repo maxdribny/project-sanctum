@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { VersionManager } from "./utils/VersionManager.js";
 
 const WIDTH = 1920,
   HEIGHT = 1080;
@@ -26,7 +27,14 @@ function create() {
   g.lineStyle(4, 0xb0b0b0, 1);
   g.strokeRect(x, y, boxW, boxH);
 
-  this.add.text(16, 16, "Project Sanctum: Version {}", {
+  // Initialize version manager and create version display
+  this.versionManager = new VersionManager(this);
+  this.versionManager.create();
+
+  // Get actual version for title
+  const versionString = this.versionManager.getVersionString();
+
+  this.add.text(16, 16, `Project Sanctum: ${versionString}`, {
     fontFamily: "ui-monospace, Menlo, Consolas, monospace",
     fontSize: "20px",
     color: "#cfd8dc",

@@ -26,6 +26,10 @@ jobs:
           cache: "npm"
 
       - run: npm ci || npm i
+
+      - name: Generate version information
+        run: node scripts/version.cjs
+
       - run: npm run build
 
       # (SPA fix) Serve index.html for unknown routes on Pages

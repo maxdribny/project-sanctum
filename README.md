@@ -115,6 +115,64 @@ We use a structured branching approach to keep development organized:
    git branch -d feat-your-feature-name
    ```
 
+### 🚀 Build & Deployment Workflow
+
+#### Automatic Versioning
+The project uses integrated semantic versioning that automatically generates version numbers based on git history:
+
+- **Development builds**: `v0.1.0-dev.15+a1b2c3d` (commits since last tag + commit hash)
+- **Feature branches**: `v0.1.0-feat-raycasting.3+e4f5g6h`
+- **Production releases**: `v0.1.0` (clean version from git tags)
+
+#### Build Process
+
+1. **Local Development**
+   ```bash
+   npm run dev          # Start development server
+   npm run build        # Build for production (generates version automatically)
+   npm run preview      # Preview production build locally
+   ```
+
+2. **GitHub Actions (Automatic)**
+   - **Triggers**: Push to `main` branch
+   - **Steps**:
+     1. Checkout code and setup Node.js
+     2. Install dependencies (`npm ci`)
+     3. **Generate version info** (`node scripts/version.js`)
+     4. Build project (`npm run build`)
+     5. Deploy to GitHub Pages
+
+3. **Version Display**
+   - **In-game**: Bottom-left corner shows current version
+   - **Interactive**: Click version for detailed build info
+   - **Color-coded**:
+     - 🟢 Green = Production release
+     - 🔵 Blue = Development build
+     - 🟣 Purple = Feature branch
+     - 🟠 Orange = Other branches
+
+#### Creating Releases
+
+1. **Merge to main** (triggers deployment)
+   ```bash
+   # After PR is approved and merged to dev
+   git checkout main
+   git pull origin main
+   git merge dev
+   git push origin main
+   ```
+
+2. **Tag releases** (optional, for clean version numbers)
+   ```bash
+   git tag v0.1.0
+   git push origin v0.1.0
+   ```
+
+#### Live Deployment
+- **URL**: https://maxdribny.github.io/project-sanctum/
+- **Updates**: Automatically when `main` branch changes
+- **Build time**: ~2-3 minutes via GitHub Actions
+
 ### 📝 Commit Guidelines
 
 Use clear, descriptive commit messages:
