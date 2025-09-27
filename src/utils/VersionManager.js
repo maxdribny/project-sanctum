@@ -155,7 +155,12 @@ export class VersionManager {
     this.modalBackground.setDepth(999);
     this.modalBackground.setScrollFactor(0);
     this.modalBackground.setVisible(false);
-    this.modalBackground.setInteractive();
+
+    // Set interactive with explicit hit area for the full screen
+    this.modalBackground.setInteractive(
+      new Phaser.Geom.Rectangle(0, 0, this.scene.scale.width, this.scene.scale.height),
+      Phaser.Geom.Rectangle.Contains
+    );
     this.modalBackground.on('pointerdown', () => this.hideDetailsModal());
 
     // Modal content panel

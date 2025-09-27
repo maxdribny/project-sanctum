@@ -5,9 +5,9 @@
  * @description Generates semantic version info from git data and package.json
  */
 
-import { execSync } from 'child_process';
-import { readFileSync, writeFileSync } from 'fs';
-import { join } from 'path';
+const { execSync } = require('child_process');
+const { readFileSync, writeFileSync } = require('fs');
+const { join } = require('path');
 
 /**
  * Generate comprehensive version information
@@ -37,11 +37,20 @@ function generateVersionInfo() {
       }
 
       // Count commits since latest tag
+      const tagRef = latestTag.startsWith('v') ? latestTag : 'v' + latestTag;
       commitsSinceTag = parseInt(
-        execSync(`git rev-list ${latestTag.startsWith('v') ? latestTag : 'v' + latestTag}..HEAD --count`, { encoding: 'utf8' }).trim()
+        execSync(`git rev-list ${tagRef}..HEAD --count`, { encoding: 'utf8' }).trim()
       );
     } catch (error) {
       console.log('No git tags found, using package.json version');
+      // Use commits since beginning if no tags
+      try {
+        commitsSinceTag = parseInt(
+          execSync('git rev-list --count HEAD', { encoding: 'utf8' }).trim()
+        );
+      } catch (e) {
+        commitsSinceTag = 0;
+      }
     }
 
     // Generate build timestamp
@@ -142,9 +151,9 @@ function writeVersionFile(versionInfo) {
 }
 
 // Main execution
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (require.main === module) {
   const versionInfo = generateVersionInfo();
   writeVersionFile(versionInfo);
 }
 
-export { generateVersionInfo, writeVersionFile };
+module.exports = { generateVersionInfo, writeVersionFile };

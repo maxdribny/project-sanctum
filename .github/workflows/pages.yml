@@ -28,7 +28,7 @@ jobs:
       - run: npm ci || npm i
 
       - name: Generate version information
-        run: node scripts/version.js
+        run: node scripts/version.cjs
 
       - run: npm run build
 
