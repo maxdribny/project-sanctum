@@ -73,7 +73,9 @@ Basic Phaser setup with placeholder UI displaying project title and version
 
 ### Deployment
 - Automatic deployment to GitHub Pages via GitHub Actions on main branch pushes
-- Vite base path configured for GitHub Pages: `/maxdribny.github.io/project-sanctum/`
+- Development work happens on `dev` branch with local testing
+- Only stable, reviewed code on `main` gets deployed to live site
+- Vite base path configured for GitHub Pages: `/project-sanctum/`
 - SPA routing support with 404.html fallback
 
 ## Development Guidelines
@@ -181,3 +183,4 @@ export class ExampleModule {
 - **GitHub Pages**: Live testing environment for immediate feedback
 - **Debug Tools**: URL parameters and debug panels for development testing
 - **Regression Prevention**: Always test existing functionality when adding features
+- Never sign off on PRs or commits that this was generated with AI or Claude Code

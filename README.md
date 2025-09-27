@@ -79,8 +79,8 @@ We use a structured branching approach to keep development organized:
 
 #### Branch Types
 
-- **`main`** - Production-ready releases only. Protected branch.
-- **`dev`** - Active development branch. GitHub Pages deploys from here.
+- **`main`** - Production-ready releases only. GitHub Pages deploys from here.
+- **`dev`** - Active development branch for testing and iteration.
 - **`feat-[feature-name]`** - New features (e.g., `feat-raycasting-engine`)
 - **`fix-[issue-description]`** - Bug fixes (e.g., `fix-collision-detection`)
 - **`docs-[section]`** - Documentation updates (e.g., `docs-contributing-guide`)
