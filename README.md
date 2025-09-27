@@ -2,6 +2,10 @@
 
 > An asymmetric multiplayer dungeon crawler where adventurers face off against a malevolent dungeon master in a cursed labyrinth.
 
+## 🤝 **Built for Collaboration**
+
+**Project Sanctum is designed from the ground up to welcome contributors of all skill levels.** Whether you're a seasoned developer or just starting your coding journey, there's a place for you in this project. Our modular architecture ensures that you can contribute meaningfully without needing to understand the entire codebase.
+
 ## 🎮 Game Concept
 
 **Project Sanctum** is a retro-inspired game that combines the tension of classic FPS gameplay with strategic dungeon mastery. Players take on one of two roles:
@@ -22,14 +26,21 @@ Play the current prototype: **[https://maxdribny.github.io/project-sanctum/](htt
 - **Deployment**: GitHub Pages with automated CI/CD
 - **Language**: Modern JavaScript (ES6 modules)
 
-## 🏗️ Architecture
+## 🏗️ Modular Architecture Philosophy
 
-This project implements a semi-custom raycasting engine within Phaser to achieve retro FPS visuals while maintaining web compatibility. The architecture supports:
+**Every system is designed to be independently understandable and contributable:**
 
+- **🧩 Self-Contained Modules**: Work on one system without breaking others
+- **📚 Documentation-First**: Code explains itself through comprehensive comments
+- **🎯 Progressive Complexity**: Simple entry points that grow with your skills
+- **🔗 Clear Interfaces**: Well-defined APIs between components
+- **✅ Isolated Testing**: Each module can be tested independently
+
+### Technical Features
 - **Raycasting Engine**: Pseudo-3D rendering for first-person perspective
-- **Scene Management**: Separate scenes for adventurer and dungeon master views
-- **Grid-Based Maps**: Tile-based collision detection and dungeon generation
-- **Performance Optimization**: Efficient rendering for web browsers
+- **Scene Management**: Separate, isolated scenes for different game modes
+- **Grid-Based Maps**: Intuitive tile-based collision and dungeon systems
+- **Event-Driven Design**: Loose coupling between game systems
 
 ## 🤝 Contributing
 
@@ -114,32 +125,35 @@ Use clear, descriptive commit messages:
 - **refactor:** Code improvements (`refactor: optimize rendering pipeline`)
 - **test:** Testing (`test: add unit tests for map generation`)
 
-### 🎯 Contribution Areas
+### 🎯 Contribution Areas by Skill Level
 
-Looking for ways to contribute? Here are some areas where we need help:
+**🟢 Beginner-Friendly (Great First Contributions)**
+- **UI Components**: HUD elements, menus, buttons
+- **Asset Integration**: Loading sprites, textures, sounds
+- **Simple Gameplay**: Basic interactions, simple animations
+- **Documentation**: Comments, README improvements, tutorials
+- **Testing**: Writing basic test cases, manual testing
 
-#### 🎮 Game Systems
-- **Raycasting Engine**: Core 3D rendering implementation
-- **Monster AI**: Pathfinding and behavior systems
-- **Trap Mechanics**: Interactive dungeon elements
-- **Inventory System**: Weapon and item management
+**🟡 Intermediate Challenges**
+- **Game Logic**: Player movement, collision detection
+- **Scene Management**: Transitions, state management
+- **System Integration**: Connecting modules together
+- **Performance**: Basic optimization, asset management
+- **Input Handling**: Keyboard, mouse, gamepad support
 
-#### 🎨 Art & Assets
-- **Sprite Creation**: Monsters, weapons, items (pixel art style)
-- **Texture Design**: Wall and floor textures
-- **UI Design**: HUD elements and menus
-- **Sound Effects**: Retro-style audio
+**🔴 Advanced Projects**
+- **Raycasting Engine**: Core 3D rendering mathematics
+- **Monster AI**: Pathfinding algorithms, behavior trees
+- **Networking**: WebRTC/WebSocket multiplayer implementation
+- **Engine Architecture**: Core systems and optimization
+- **Complex Algorithms**: Map generation, physics simulation
 
-#### 🔧 Technical Infrastructure
-- **Multiplayer Networking**: WebRTC/WebSocket implementation
-- **Performance Optimization**: Rendering and game loop improvements
-- **Mobile Support**: Touch controls and responsive design
-- **Testing Framework**: Unit and integration tests
-
-#### 📚 Documentation
-- **Code Documentation**: JSDoc comments and guides
-- **Gameplay Tutorials**: How-to guides for players
-- **Developer Guides**: Architecture and system explanations
+#### 🎨 Non-Programming Contributions
+- **Pixel Art**: Sprites, textures, UI elements
+- **Sound Design**: Retro-style audio effects
+- **Game Design**: Level layouts, gameplay mechanics
+- **Documentation**: Tutorials, guides, wiki content
+- **Testing**: Gameplay testing, bug reporting
 
 ### 🐛 Bug Reports
 
