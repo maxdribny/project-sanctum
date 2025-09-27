@@ -63,3 +63,6 @@ temp/
 .cache/
 .parcel-cache/
 .vite/
+
+# Generated version files
+version.json
