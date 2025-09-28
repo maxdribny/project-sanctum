@@ -115,6 +115,13 @@ We use a structured branching approach to keep development organized:
    git branch -d feat-your-feature-name
    ```
 
+5 **Generate Documentation**
+   Install dependencies and generate:
+   ```bash
+   npm install
+   npm run docs:build
+   ```
+
 ### 🚀 Build & Deployment Workflow
 
 #### Automatic Versioning
