@@ -1,6 +1,7 @@
 /**
  * @fileoverview Adventurer player controller
  * @description Handles player movement, rotation, and interaction in first-person view
+ * @category Entities
  * Skill Level: Intermediate
  */
 

@@ -1,6 +1,7 @@
 /**
  * @fileoverview Core raycasting engine implementation
  * @description Handles pseudo-3D rendering using raycasting techniques
+ * @category Engine
  * Skill Level: Advanced - Well-documented for learning
  */
 

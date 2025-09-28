@@ -8,9 +8,18 @@
     "build": "vite build",
     "preview": "vite preview --port 5173",
     "version": "node scripts/version.cjs",
-    "prebuild": "npm run version"
+    "prebuild": "npm run version",
+    "docs:build": "jsdoc -c jsdoc.conf.json",
+    "docs:serve": "jsdoc -c jsdoc.conf.json && npx http-server docs -p 8080 -o",
+    "docs:watch": "nodemon --watch src --ext js --exec \"npm run docs:build\"",
+    "docs:clean": "rm -rf docs",
+    "docs:deploy": "npm run docs:build && gh-pages -d docs"
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
+    "http-server": "^14.1.1",
+    "jsdoc": "^4.0.4",
+    "nodemon": "^3.1.10",
     "vite": "^5.4.0"
   },
   "dependencies": {
